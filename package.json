@@ -1,0 +1,32 @@
+{
+  "name": "selection-save-restore",
+  "version": "0.0.0",
+  "description": "DOM Selection save and restore module, originally from \"rangy\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TooTallNate/selection-save-restore.git"
+  },
+  "keywords": [
+    "rangy",
+    "dom",
+    "selection",
+    "save",
+    "restore",
+    "marker",
+    "range"
+  ],
+  "author": "Nathan Rajlich <nathan@tootallnate.net> (http://n8.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TooTallNate/selection-save-restore/issues"
+  },
+  "homepage": "https://github.com/TooTallNate/selection-save-restore",
+  "dependencies": {
+    "debug": "~1.0.2",
+    "uid": "0.0.2"
+  }
+}
