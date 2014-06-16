@@ -1,6 +1,6 @@
 {
   "name": "selection-save-restore",
-  "version": "0.0.0",
+  "version": "1.3.0",
   "description": "DOM Selection save and restore module, originally from \"rangy\"",
   "main": "index.js",
   "repository": {
