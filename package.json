@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "description": "DOM Selection save and restore module, originally from \"rangy\"",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/TooTallNate/selection-save-restore.git"
