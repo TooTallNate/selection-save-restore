@@ -24,6 +24,7 @@
   "homepage": "https://github.com/TooTallNate/selection-save-restore",
   "dependencies": {
     "debug": "~1.0.2",
+    "get-document": "0.1.0",
     "uid": "0.0.2"
   }
 }

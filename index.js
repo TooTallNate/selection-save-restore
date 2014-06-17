@@ -16,6 +16,7 @@
  */
 
 var uid = require('uid');
+var getDocument = require('get-document');
 var debug = require('debug')('selection-save-restore');
 
 /**
@@ -35,20 +36,6 @@ var markerTextChar = "\ufeff";
 
 function gEBI(id, doc) {
   return (doc || document).getElementById(id);
-}
-
-function getDocument(node) {
-  if (node.nodeType == 9) {
-    return node;
-  } else if (typeof node.ownerDocument != 'undefined') {
-    return node.ownerDocument;
-  } else if (typeof node.document != 'undefined') {
-    return node.document;
-  } else if (node.parentNode) {
-    return getDocument(node.parentNode);
-  } else {
-    throw new Error("getDocument: no document found for node");
-  }
 }
 
 
@@ -87,13 +74,9 @@ function compareRanges(r1, r2) {
   return r2.compareBoundaryPoints(r1.START_TO_START, r1);
 }
 
-function getRangeDocument(range) {
-  return range.document || getDocument(range.startContainer);
-}
-
 function saveRange(range, backward) {
   var startEl, endEl;
-  var doc = getRangeDocument(range);
+  var doc = getDocument(range);
   var text = range.toString();
 
   if (range.collapsed) {
@@ -172,7 +155,7 @@ function saveRanges(ranges, backward) {
   // adjust each range's boundaries to lie between its markers
   for (i = len - 1; i >= 0; --i) {
     range = ranges[i];
-    doc = getRangeDocument(range);
+    doc = getDocument(range);
     if (range.collapsed) {
       range.collapseAfter(gEBI(rangeInfos[i].markerId, doc));
     } else {
